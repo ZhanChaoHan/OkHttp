@@ -27,11 +27,9 @@ public class GET {
 		        .build();
 		Call call = okHttpClient.newCall(request);
 		call.enqueue(new Callback() {
-		    @Override
 		    public void onFailure(Call call, IOException e) {
 		        System.out.println("onFailure");
 		    }
-		    @Override
 		    public void onResponse(Call call, Response response) throws IOException {
 		        System.out.println("onResponse: " + response.body().string());
 		    }
@@ -48,7 +46,6 @@ public class GET {
 		        .build();
 		final Call call = okHttpClient.newCall(request);
 		new Thread(new Runnable() {
-		    @Override
 		    public void run() {
 		        try {
 		            Response response = call.execute();

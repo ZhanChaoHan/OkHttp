@@ -15,8 +15,8 @@ import okhttp3.Response;
  *
  */
 public class PostToServer {
-	private static final String URL="http://127.0.0.1:8080/post/B";
-	private static final String PAM="{name:'你還',age:21}";
+	private static final String URL="http://127.0.0.1:4000/addUser";
+	private static final String PAM="{realname:'你還',email:'cc'}";
 	public static final MediaType JSON= MediaType.get("application/json; charset=utf-8");
 	
 	@Test

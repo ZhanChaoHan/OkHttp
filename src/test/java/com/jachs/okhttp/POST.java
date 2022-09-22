@@ -34,11 +34,9 @@ public class POST {
 		        .build();
 		OkHttpClient okHttpClient = new OkHttpClient();
 		okHttpClient.newCall(request).enqueue(new Callback() {
-		    @Override
 		    public void onFailure(Call call, IOException e) {
 		        System.out.println("onFailure: " + e.getMessage());
 		    }
-		    @Override
 		    public void onResponse(Call call, Response response) throws IOException {
 		        System.out.println( response.protocol() + " " +response.code() + " " + response.message());
 		    	Headers headers = response.headers();
@@ -70,11 +68,9 @@ public class POST {
 		        .build();
 		OkHttpClient okHttpClient = new OkHttpClient();
 		okHttpClient.newCall(request).enqueue(new Callback() {
-		    @Override
 		    public void onFailure(Call call, IOException e) {
 		        System.out.println("onFailure: " + e.getMessage());
 		    }
-		    @Override
 		    public void onResponse(Call call, Response response) throws IOException {
 		        System.out.println(response.protocol() + " " +response.code() + " " + response.message());
 		        Headers headers = response.headers();
@@ -97,11 +93,9 @@ public class POST {
 		        .post(RequestBody.create(mediaType, file))
 		        .build();
 		okHttpClient.newCall(request).enqueue(new Callback() {
-		    @Override
 		    public void onFailure(Call call, IOException e) {
 		        System.out.println("onFailure: " + e.getMessage());
 		    }
-		    @Override
 		    public void onResponse(Call call, Response response) throws IOException {
 		        System.out.println(response.protocol() + " " +response.code() + " " + response.message());
 		        Headers headers = response.headers();
@@ -118,19 +112,18 @@ public class POST {
 	public void test5() throws InterruptedException {
 		OkHttpClient okHttpClient = new OkHttpClient();
 		RequestBody requestBody = new FormBody.Builder()
-		        .add("search", "Jurassic Park")
+		        .add("realname", "Jurassic Park")
+		        .add("email", "aa")
 		        .build();
 		Request request = new Request.Builder()
-		        .url("https://en.wikipedia.org/w/index.php")
+		        .url("http://127.0.0.1:4000/addUser")
 		        .post(requestBody)
 		        .build();
 
 		okHttpClient.newCall(request).enqueue(new Callback() {
-		    @Override
 		    public void onFailure(Call call, IOException e) {
 		        System.out.println("onFailure: " + e.getMessage());
 		    }
-		    @Override
 		    public void onResponse(Call call, Response response) throws IOException {
 		        System.out.println(response.protocol() + " " +response.code() + " " + response.message());
 		        Headers headers = response.headers();
