@@ -15,7 +15,7 @@ import okhttp3.Response;
 /***
  * 
  * @author zhanchaohan
- *
+ * @see 文件类型:https://www.w3school.com.cn/media/media_mimeref.asp
  */
 public class FileUpdate {
 
@@ -25,7 +25,7 @@ public class FileUpdate {
 		File f=new File("C:\\Users\\79951\\Desktop\\sucai\\UIYR8(_U4LD3[1Y2$_DP}T2.jpg");
 		
 		OkHttpClient client = new OkHttpClient();
-        MediaType mediaType = MediaType.parse("image/jpg");
+        MediaType mediaType = MediaType.parse("image/jpg");//application/octet-stream
         RequestBody fileBody = RequestBody.create(mediaType, f);
         RequestBody requestBody = new MultipartBody.Builder()
         	.setType(MultipartBody.FORM)
